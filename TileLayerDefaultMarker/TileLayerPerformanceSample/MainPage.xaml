@@ -1,0 +1,22 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TileLayerPerformanceSample.MainPage"
+             xmlns:maps="clr-namespace:Syncfusion.Maui.Maps;assembly=Syncfusion.Maui.Maps"
+            >
+
+    <Grid Padding="10" RowDefinitions="Auto,*" RowSpacing="10">
+        <Border Grid.Row="0" Padding="12" BackgroundColor="#F2F2F2" Stroke="#D0D0D0">
+            <VerticalStackLayout Spacing="8">
+                <Label  x:Name="InitialRenderTimeLabel" FontAttributes="Bold" FontSize="16" Text="Title Layer Render Time: Waiting..." />
+                <Button Text="Load TitleLayer" Clicked="Button_Clicked" HorizontalOptions="{OnPlatform WinUI=Start, MacCatalyst=Start}" VerticalOptions="{OnPlatform WinUI=Center, MacCatalyst=Center}"/>
+            </VerticalStackLayout>
+        </Border>
+
+        <maps:SfMaps  x:Name="maps" Grid.Row="1" >
+            <maps:SfMaps.Layer>
+                <maps:MapTileLayer x:Name="mapTitleLayer" />
+            </maps:SfMaps.Layer>
+        </maps:SfMaps>
+    </Grid>
+
+</ContentPage>

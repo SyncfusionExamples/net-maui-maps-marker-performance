@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="TileLayerPerformanceSample.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>
