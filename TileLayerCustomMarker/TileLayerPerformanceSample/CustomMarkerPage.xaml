@@ -1,0 +1,38 @@
+<ContentPage
+    x:Class="TileLayerPerformanceSample.CustomMarkerPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maps="clr-namespace:Syncfusion.Maui.Maps;assembly=Syncfusion.Maui.Maps"
+    Title="Custom Marker Page">
+ 
+    <ContentPage.Resources>
+        <DataTemplate x:Key="CustomMarkerTemplate">
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Image HeightRequest="20"  Source="pin.png" WidthRequest="20" />
+            </VerticalStackLayout>
+        </DataTemplate>
+    </ContentPage.Resources>
+
+    <Grid Padding="10" RowDefinitions="Auto,*" RowSpacing="10">
+        <Border Grid.Row="0"  Padding="12" BackgroundColor="#F2F2F2"  Stroke="#D0D0D0">
+            <VerticalStackLayout Spacing="8">
+                <Label x:Name="CustomMarkerCountLabel" Text="Custom Marker Count: 0" />
+                <Label x:Name="CustomMarkerTimeLabel" FontAttributes="Bold"  Text="Custom Marker Render Time: Waiting..." />
+                <Label x:Name="ZoomTimeLabel" FontAttributes="Bold" Text="Zoom Time: Waiting..." />
+                <Label x:Name="PanTimeLabel" FontAttributes="Bold" Text="Pan Time: Waiting..." />
+            </VerticalStackLayout>
+        </Border>
+
+        <maps:SfMaps x:Name="maps" Grid.Row="1">
+            <maps:SfMaps.Layer>
+                <maps:MapTileLayer x:Name="titleLayer" UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png" MarkerTemplate="{StaticResource CustomMarkerTemplate}" ZoomLevelChanging="TitleLayer_ZoomLevelChanging" Panning="TitleLayer_Panning">
+                    <maps:MapTileLayer.ZoomPanBehavior>
+                        <maps:MapZoomPanBehavior ZoomLevel = "2" EnableZooming = "True" />
+                    </maps:MapTileLayer.ZoomPanBehavior>
+                </maps:MapTileLayer>
+            </maps:SfMaps.Layer>
+        </maps:SfMaps>
+
+    </Grid>
+
+</ContentPage>
