@@ -7,8 +7,8 @@
     <Grid Padding="10" RowDefinitions="Auto,*" RowSpacing="10">
         <Border Grid.Row="0" Padding="12"  BackgroundColor="#F2F2F2" Stroke="#D0D0D0">
             <VerticalStackLayout Spacing="8">
-                <Label x:Name="DefaultMarkerCountLabel" Text="Default Marker Count: 0" />
-                <Label x:Name="DefaultMarkerTimeLabel" FontAttributes="Bold" Text="Default Marker Render Time: Waiting..." />
+                <Label x:Name="DefaultMarkerCountLabel" Text="Default Markers: 0 | Polylines: 0" />
+                <Label x:Name="DefaultMarkerTimeLabel" FontAttributes="Bold" Text="Map Layer Setup Time: Waiting..." />
                 <Label x:Name="ZoomTimeLabel" FontAttributes="Bold" Text="Zoom Time: Waiting..." />
                 <Label x:Name="PanTimeLabel" FontAttributes="Bold" Text="Pan Time: Waiting..." />
             </VerticalStackLayout>
@@ -18,7 +18,7 @@
             <maps:SfMaps.Layer>
                 <maps:MapTileLayer x:Name="titleLayer" UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png" ZoomLevelChanging="TitleLayer_ZoomLevelChanging" Panning="TitleLayer_Panning">
                     <maps:MapTileLayer.ZoomPanBehavior>
-                        <maps:MapZoomPanBehavior ZoomLevel = "2" EnableZooming = "True" />
+                        <maps:MapZoomPanBehavior ZoomLevel = "3" EnableDoubleTapZooming="True" EnableZooming = "True" />
                     </maps:MapTileLayer.ZoomPanBehavior>
                 </maps:MapTileLayer>
             </maps:SfMaps.Layer>

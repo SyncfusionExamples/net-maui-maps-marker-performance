@@ -1,8 +1,17 @@
 # .NET MAUI Maps Marker Performance
 
-This repository contains two .NET MAUI sample apps that compare Syncfusion Maps tile-layer performance with 150 markers: built-in map markers and custom image markers. Each app displays marker count and timing information for marker setup, zooming, and panning.
+This repository contains two .NET MAUI sample apps that compare Syncfusion Maps tile-layer performance with 150 markers (built-in map markers vs. custom image markers) and 200 polylines (about 135,000 points in total). Each app displays marker count, polyline count, and timing information for layer setup, zooming, and panning.
 
-The samples use `Syncfusion.Maui.Maps` and OpenStreetMap tiles. The marker coordinates are generated for demonstration purposes and do not represent actual country locations.
+**Data in each sample**
+
+| Item | Count | Details |
+| --- | --- | --- |
+| Markers | 150 | Real-world cities across North America, South America, Europe, Africa, Asia, and Oceania. |
+| Polylines | 200 | Routes spanning continents, oceans, and straits worldwide. |
+| Polylines with 4,000 points | 20 | Every 10th polyline (80,000 points in total). |
+| Polylines with 120-479 points | 180 | Remaining polylines (about 55,000 points in total). |
+
+The samples use `Syncfusion.Maui.Maps` and OpenStreetMap tiles. They feature 150 real-world city marker locations across all inhabited continents, plus 200 geographic polyline routes spanning the globe.
 
 For general Maps setup and control usage, see [Getting Started with .NET MAUI Maps](https://help.syncfusion.com/maui/maps/getting-started).
 
@@ -10,8 +19,10 @@ For general Maps setup and control usage, see [Getting Started with .NET MAUI Ma
 
 | Sample | Description |
 | --- | --- |
-| [TileLayerDefaultMarker](./TileLayerDefaultMarker/TileLayerPerformanceSample/) | Displays 150 default `MapMarker` markers on a tile layer. |
-| [TileLayerCustomMarker](./TileLayerCustomMarker/TileLayerPerformanceSample/) | Displays the same 150 marker locations using a custom template with a pin image. |
+| [TileLayerDefaultMarker](./TileLayerDefaultMarker/TileLayerPerformanceSample/) | Displays 150 default `MapMarker` markers and 200 polylines on a tile layer. |
+| [TileLayerCustomMarker](./TileLayerCustomMarker/TileLayerPerformanceSample/) | Displays the same 150 marker locations using a custom template with a pin image, plus the same 200 polylines. |
+
+Both samples also add a polyline sublayer to the tile layer: 200 `MapPolyline` routes distributed worldwide (covering North America, South America, Europe, Asia, Africa, Oceania, and intercontinental corridors). 20 routes contain 4,000 points each, and the other 180 routes contain 120–479 points each. Polyline creation is included in the layer setup timing.
 
 Both apps launch directly into their marker page. Interact with the map to see the zoom and pan timing labels update. Each project also contains a separate `MainPage` tile-loading example; that page is not currently connected to the app shell and does not appear on launch.
 
