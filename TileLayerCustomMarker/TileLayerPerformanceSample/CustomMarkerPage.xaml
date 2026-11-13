@@ -27,7 +27,7 @@
             <maps:SfMaps.Layer>
                 <maps:MapTileLayer x:Name="titleLayer" UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png" MarkerTemplate="{StaticResource CustomMarkerTemplate}" ZoomLevelChanging="TitleLayer_ZoomLevelChanging" Panning="TitleLayer_Panning">
                     <maps:MapTileLayer.ZoomPanBehavior>
-                        <maps:MapZoomPanBehavior ZoomLevel = "3" EnableZooming = "True" />
+                        <maps:MapZoomPanBehavior ZoomLevel = "3" EnableDoubleTapZooming="True" EnableZooming = "True" />
                     </maps:MapTileLayer.ZoomPanBehavior>
                 </maps:MapTileLayer>
             </maps:SfMaps.Layer>
