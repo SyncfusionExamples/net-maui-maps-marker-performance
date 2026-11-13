@@ -21,6 +21,7 @@ public partial class DefaultMarkerPage : ContentPage
 
         MapMarkerCollection markers = CreateDefaultMarkers();
         titleLayer.Markers = markers;
+        titleLayer.Sublayers.Add(PolylineData.CreatePolylineLayer());
         defaultMarkerStopwatch.Stop();
         DefaultMarkerCountLabel.Text = $"Default Marker Count: {markers.Count}";
         DefaultMarkerTimeLabel.Text = $"Default Marker Render Time: " + $"{defaultMarkerStopwatch.Elapsed.TotalMilliseconds:F0} ms";

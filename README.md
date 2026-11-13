@@ -13,6 +13,8 @@ For general Maps setup and control usage, see [Getting Started with .NET MAUI Ma
 | [TileLayerDefaultMarker](./TileLayerDefaultMarker/TileLayerPerformanceSample/) | Displays 150 default `MapMarker` markers on a tile layer. |
 | [TileLayerCustomMarker](./TileLayerCustomMarker/TileLayerPerformanceSample/) | Displays the same 150 marker locations using a custom template with a pin image. |
 
+Both samples also add a polyline sublayer to the tile layer: 200 `MapPolyline` items, where every 10th polyline has 4,000 points and the others have 50–500 points (generated with a fixed random seed). Polyline creation is included in the marker setup timing.
+
 Both apps launch directly into their marker page. Interact with the map to see the zoom and pan timing labels update. Each project also contains a separate `MainPage` tile-loading example; that page is not currently connected to the app shell and does not appear on launch.
 
 ### About the timing values

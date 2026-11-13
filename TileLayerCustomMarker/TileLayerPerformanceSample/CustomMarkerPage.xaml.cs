@@ -17,6 +17,7 @@ public partial class CustomMarkerPage : ContentPage
         InitializeComponent();
         MapMarkerCollection markers = CreateCustomMarkers();
         titleLayer.Markers = markers;
+        titleLayer.Sublayers.Add(PolylineData.CreatePolylineLayer());
         customMarkerStopwatch.Stop();
         CustomMarkerCountLabel.Text = $"Custom Marker Count: {markers.Count}";
         CustomMarkerTimeLabel.Text = $"Custom Marker Render Time: " + $"{customMarkerStopwatch.Elapsed.TotalMilliseconds:F0} ms";
