@@ -2,7 +2,7 @@
 
 This repository contains two .NET MAUI sample apps that compare Syncfusion Maps tile-layer performance with 150 markers: built-in map markers and custom image markers. Each app displays marker count and timing information for marker setup, zooming, and panning.
 
-The samples use `Syncfusion.Maui.Maps` and OpenStreetMap tiles. The marker coordinates are generated for demonstration purposes and do not represent actual country locations.
+The samples use `Syncfusion.Maui.Maps` and OpenStreetMap tiles. They feature 150 real-world city marker locations across all inhabited continents, plus 200 geographic polyline routes spanning the globe.
 
 For general Maps setup and control usage, see [Getting Started with .NET MAUI Maps](https://help.syncfusion.com/maui/maps/getting-started).
 
@@ -13,7 +13,7 @@ For general Maps setup and control usage, see [Getting Started with .NET MAUI Ma
 | [TileLayerDefaultMarker](./TileLayerDefaultMarker/TileLayerPerformanceSample/) | Displays 150 default `MapMarker` markers on a tile layer. |
 | [TileLayerCustomMarker](./TileLayerCustomMarker/TileLayerPerformanceSample/) | Displays the same 150 marker locations using a custom template with a pin image. |
 
-Both samples also add a polyline sublayer to the tile layer: 200 `MapPolyline` items, where every 10th polyline has 4,000 points and the others have 50–500 points (generated with a fixed random seed). Polyline creation is included in the marker setup timing.
+Both samples also add a polyline sublayer to the tile layer: 200 `MapPolyline` routes distributed worldwide (covering North America, South America, Europe, Asia, Africa, Oceania, and intercontinental corridors). 20 major routes contain 4,000 points each, and the other 180 routes contain 120–480 points each. Polyline creation is included in the layer setup timing.
 
 Both apps launch directly into their marker page. Interact with the map to see the zoom and pan timing labels update. Each project also contains a separate `MainPage` tile-loading example; that page is not currently connected to the app shell and does not appear on launch.
 

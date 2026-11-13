@@ -23,8 +23,8 @@ public partial class DefaultMarkerPage : ContentPage
         titleLayer.Markers = markers;
         titleLayer.Sublayers.Add(PolylineData.CreatePolylineLayer());
         defaultMarkerStopwatch.Stop();
-        DefaultMarkerCountLabel.Text = $"Default Marker Count: {markers.Count}";
-        DefaultMarkerTimeLabel.Text = $"Default Marker Render Time: " + $"{defaultMarkerStopwatch.Elapsed.TotalMilliseconds:F0} ms";
+        DefaultMarkerCountLabel.Text = $"Default Markers: {markers.Count} | Polylines: {PolylineData.PolylineCount}";
+        DefaultMarkerTimeLabel.Text = $"Map Layer Setup Time: {defaultMarkerStopwatch.Elapsed.TotalMilliseconds:F0} ms";
     }
 
     private void TitleLayer_ZoomLevelChanging(object sender, ZoomLevelChangingEventArgs e)
